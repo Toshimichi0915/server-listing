@@ -62,8 +62,8 @@ export default async function ServerList({
                   </CardDescription>
                 </div>
                 <Badge className={cn("ml-2", {
-                    "bg-primary text-primary-foreground": server.server_type !== "BUNGEECORD",
-                    "bg-accent text-accent-foreground": server.server_type === "BUNGEECORD",
+                    "bg-primary text-primary-foreground": server.server_type === "BUNGEECORD",
+                    "bg-accent text-accent-foreground": server.server_type !== "BUNGEECORD",
                 })}>
                   {server.server_type}
                 </Badge>
