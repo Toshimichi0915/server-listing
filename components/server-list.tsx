@@ -19,7 +19,7 @@ export default async function ServerList({
   const type = typeof searchParams.type === "string" ? searchParams.type : "name"
   const pageParam = typeof searchParams.page === "string" ? searchParams.page : "1"
   const page = Number(pageParam) || 1
-  const pageSize = 20
+  const pageSize = 50
 
   const { servers, totalServers } = await getServers({
     query,
