@@ -1,16 +1,14 @@
 import { Suspense } from "react"
 import ServerList from "@/components/server-list"
 import { SearchFilters } from "@/components/search-filters"
+import { ExportButton } from "@/components/export-button"
 import { Skeleton } from "@/components/ui/skeleton"
 
+// Next.js App Router automatically provides searchParams to page components
 export default function HomePage({
                                    searchParams,
                                  }: {
-  searchParams?: {
-    query?: string
-    type?: string
-    page?: string
-  }
+  searchParams: { [key: string]: string | string[] | undefined }
 }) {
   return (
     <div className="container mx-auto py-6 space-y-6">
@@ -19,7 +17,10 @@ export default function HomePage({
         <p className="text-muted-foreground">Browse and search through available game servers</p>
       </div>
 
-      <SearchFilters />
+      <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+        <SearchFilters />
+        <ExportButton />
+      </div>
 
       <Suspense fallback={<ServerListSkeleton />}>
         <ServerList searchParams={searchParams} />

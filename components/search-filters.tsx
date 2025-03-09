@@ -34,10 +34,10 @@ export function SearchFilters() {
   }
 
   return (
-    <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-3">
+    <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
       <div className="flex-1 flex gap-3">
         <Select value={searchType} onValueChange={setSearchType}>
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-[140px]">
             <SelectValue placeholder="Search by..." />
           </SelectTrigger>
           <SelectContent>
@@ -62,4 +62,3 @@ export function SearchFilters() {
     </form>
   )
 }
-
